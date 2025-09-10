@@ -2,15 +2,21 @@ import Row from "../layout/Row";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const Home = () => {
     const inputRef = useRef(null);
+    const [display, setDisplay] = useState(0);
     const [tasks, setTasks] = useState([]);
+
+    useEffect(() => {
+        
+    }, [display]);
 
     const handleClick = () => {
         
         if (inputRef.current.value === null) return;
+        setDisplay((display) => display = inputRef.current.value)
     }
     return (
         <div className="p-1.5">
